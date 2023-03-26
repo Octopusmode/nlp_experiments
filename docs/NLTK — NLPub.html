@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://nlpub.ru/NLTK -->
+<html class="client-js" lang="ru" dir="ltr" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script src="chrome-extension://oaljhjociknfmhmfidoogomplhlbdomb/js/ajax-listener-other.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #181a1b;
+}
+html, body {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #404400 !important;
+    color: #e8e6e3 !important;
+}
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #575e62;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #484e51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+
+<title>NLTK — NLPub</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"83c5fc0846a7092bee750ad2","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"NLTK","wgTitle":"NLTK","wgCurRevisionId":3078,"wgRevisionId":3078,"wgArticleId":470,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Непроверенные учебные задания","Инструменты"],"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"NLTK","wgRelevantArticleId":470,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,
+"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"skins.vector.user.styles":"ready","site.styles":"ready","user.styles":"ready","skins.vector.user":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","ext.cite.styles":"ready","mediawiki.ui.button":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","mediawiki.ui.icon":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.ready","mediawiki.toc","skins.vector.js","skins.vector.es6"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="./NLTK — NLPub_files/load.php"><style class="darkreader darkreader--sync" media="screen"></style>
+<script async="" src="./NLTK — NLPub_files/load(1).php"></script>
+<meta name="generator" content="MediaWiki 1.39.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="nltk (Natural Language ToolKit) — пакет библиотек и программ для символьной и статистической обработки естественного языка, написанных на языке программирования Python. Сопровождается обширной документацией, включая книгу с объяснением основных концепций, стоящих за теми задачами обработки естественного языка, которые можно выполнять с помощью NLTK.">
+<meta name="viewport" content="width=1000">
+<link rel="icon" href="https://nlpub.ru/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://nlpub.ru/opensearch_desc.php" title="NLPub (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="https://nlpub.ru/api.php?action=rsd">
+<link rel="license" href="https://nlpub.ru/NLPub:%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">
+<link rel="alternate" type="application/atom+xml" title="NLPub — Atom-лента" href="https://nlpub.ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+<link rel="canonical" href="https://nlpub.ru/NLTK">
+<meta name="darkreader" content="45480508bc42450f813fc0ce92aef331"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #032029 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #0a0a0a !important;
+}
+.tou-uknfeu {
+    background-color: #231603 !important;
+}
+.tou-6i3zyv {
+    background-color: #19576c !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style><style type="text/css" id="YouTubeAdBlocker">body:not(.allowAdsOnThisBody) .ad-container, body:not(.allowAdsOnThisBody) #google_companion_ad_div, body:not(.allowAdsOnThisBody) .iv-promo, body:not(.allowAdsOnThisBody) .iv-promo-video, body:not(.allowAdsOnThisBody) .contains-mute-button, body:not(.allowAdsOnThisBody) .video-annotations, body:not(.allowAdsOnThisBody) .ad-div, body:not(.allowAdsOnThisBody) #masthead-ad, body:not(.allowAdsOnThisBody) #video-masthead, body:not(.allowAdsOnThisBody) .video-masthead-v2, body:not(.allowAdsOnThisBody) ytd-compact-promoted-video-renderer, body:not(.allowAdsOnThisBody) #promotion-shelf, body:not(.allowAdsOnThisBody) .ytp-ad-progress-list, body:not(.allowAdsOnThisBody) .ad-created .annotation, body:not(.allowAdsOnThisBody) .ytp-cards-teaser, body:not(.allowAdsOnThisBody) #player-ads { display:none!important}</style><style class="darkreader darkreader--sync" media="screen"></style><style>
+.cite-accessibility-label{ top:-99999px;clip:rect(1px,1px,1px,1px); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}:target .mw-cite-targeted-backlink{font-weight:bold}.mw-cite-up-arrow-backlink{display:none}:target .mw-cite-up-arrow-backlink{display:inline}:target .mw-cite-up-arrow{display:none}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}</style><style class="darkreader darkreader--sync" media="screen"></style></head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NLTK rootpage-NLTK skin-vector-2022 action-view vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled" inject_svd="true"><div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="https://nlpub.ru/NLTK#content">Перейти к содержанию</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<header class="mw-header">
+			<div class="mw-header-aside">
+			<label id="mw-sidebar-button" class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for="mw-sidebar-checkbox" role="button" aria-controls="mw-panel" data-event-name="ui.sidebar" tabindex="0" title="Главное меню">
+				<span>Переключить боковую панель</span>
+			</label>
+			
+<a href="https://nlpub.ru/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="mw-logo">
+	<span class="mw-logo-container">
+		<strong class="mw-logo-wordmark">NLPub</strong>
+	</span>
+</a>
+
+			</div>
+			<div class="mw-header-content">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA" title="Искать в NLPub [f]" accesskey="f" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+		<span>Поиск</span>
+	</a>
+	
+	<div>
+		<form action="https://nlpub.ru/index.php" id="searchform" class="vector-search-box-form">
+			<div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-moved">
+				<input class="vector-search-box-input" type="search" name="search" placeholder="Искать в NLPub" aria-label="Искать в NLPub" autocapitalize="sentences" title="Искать в NLPub [f]" accesskey="f" id="searchInput">
+				<input type="hidden" name="title" value="Служебная:Поиск">
+				<input id="mw-searchButton" class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+				<input id="searchButton" class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+			</div>
+		</form>
+	</div>
+</div>
+
+			<nav class="vector-user-links" aria-label="Персональные инструменты" role="navigation">
+	
+
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet mw-portlet-vector-user-menu-overflow vector-user-menu-overflow">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-createaccount-2" class="user-links-collapsible-item mw-list-item"><a href="https://nlpub.ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=NLTK" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal emptyPortlet vector-user-menu vector-user-menu-logged-out vector-menu-dropdown" title="Больше возможностей">
+	<input type="checkbox" id="p-personal-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-personal" class="vector-menu-checkbox">
+	<label id="p-personal-label" for="p-personal-checkbox" class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis">
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</label>
+	<div class="vector-menu-content">
+		<div class="vector-user-menu-create-account"><a href="https://nlpub.ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=NLTK" class="vector-menu-content-item user-links-collapsible-item" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span class="mw-ui-icon mw-ui-icon-userAdd mw-ui-icon-wikimedia-userAdd"></span> <span>Создать учётную запись</span></a></div>
+<div class="vector-user-menu-login"><a href="https://nlpub.ru/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=NLTK" class="vector-menu-content-item vector-menu-content-item-login" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span class="mw-ui-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Войти</span></a></div>
+<div class="vector-user-menu-anon-editor">
+	<p>
+		Страницы для неавторизованных редакторов <a href="https://nlpub.ru/%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" aria-label="Подробнее о редактировании"><span>узнать больше</span></a>
+	</p>
+</div>
+
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+</nav>
+
+			</div>
+		</header>
+		<div class="vector-sidebar-container ">
+			<div id="mw-navigation">
+				
+
+<nav id="mw-panel" class="mw-sidebar" aria-label="Сайт" role="navigation">
+	
+
+<div id="p-mainpage-description" class="vector-menu mw-portlet mw-portlet-mainpage-description vector-menu-portal portal">
+	<div id="p-mainpage-description-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">NLPub</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage" class="mw-list-item"><a href="https://nlpub.ru/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-text" class="mw-list-item"><a href="https://nlpub.ru/%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0"><span>Обработка текста</span></a></li><li id="n-speech" class="mw-list-item"><a href="https://nlpub.ru/%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B5%D1%87%D0%B8"><span>Обработка речи</span></a></li><li id="n-utilities" class="mw-list-item"><a href="https://nlpub.ru/%D0%A3%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B"><span>Утилиты</span></a></li><li id="n-methods" class="mw-list-item"><a href="https://nlpub.ru/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B"><span>Методы</span></a></li><li id="n-algorithms" class="mw-list-item"><a href="https://nlpub.ru/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B"><span>Алгоритмы</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+	
+
+<div id="p-resources" class="vector-menu mw-portlet mw-portlet-resources vector-menu-portal portal">
+	<div id="p-resources-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Ресурсы</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-dicts" class="mw-list-item"><a href="https://nlpub.ru/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C"><span>Словари</span></a></li><li id="n-thesauri" class="mw-list-item"><a href="https://nlpub.ru/%D0%A2%D0%B5%D0%B7%D0%B0%D1%83%D1%80%D1%83%D1%81"><span>Тезаурусы</span></a></li><li id="n-corpora" class="mw-list-item"><a href="https://nlpub.ru/%D0%9A%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2"><span>Корпусы</span></a></li><li id="n-databanks" class="mw-list-item"><a href="https://nlpub.ru/%D0%91%D0%B0%D0%BD%D0%BA_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"><span>Банки данных</span></a></li><li id="n-journals" class="mw-list-item"><a href="https://nlpub.ru/%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B"><span>Журналы</span></a></li></ul>
+		
+	</div>
+</div>
+
+
+<div id="p-irl" class="vector-menu mw-portlet mw-portlet-irl vector-menu-portal portal">
+	<div id="p-irl-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Вживую</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-events" class="mw-list-item"><a href="https://nlpub.ru/%D0%9C%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D1%8F"><span>Мероприятия</span></a></li><li id="n-people" class="mw-list-item"><a href="https://nlpub.ru/%D0%9F%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B8"><span>Персоналии</span></a></li><li id="n-organizations" class="mw-list-item"><a href="https://nlpub.ru/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8"><span>Организации</span></a></li><li id="n-education" class="mw-list-item"><a href="https://nlpub.ru/%D0%9E%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"><span>Образование</span></a></li><li id="n-diplomas" class="mw-list-item"><a href="https://nlpub.ru/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BE%D0%B2"><span>Темы дипломов</span></a></li><li id="n-books" class="mw-list-item"><a href="https://nlpub.ru/%D0%9B%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0"><span>Литература</span></a></li></ul>
+		
+	</div>
+</div>
+
+
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal">
+	<div id="p-navigation-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Навигация</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-recentchanges" class="mw-list-item"><a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li><li id="n-randompage" class="mw-list-item"><a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная страница</span></a></li><li id="n-help" class="mw-list-item"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" rel="nofollow" title="Место расположения Справки"><span>Справка</span></a></li></ul>
+		
+	</div>
+</div>
+
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal">
+	<div id="p-tb-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/NLTK" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/NLTK" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li><li id="t-permalink" class="mw-list-item"><a href="https://nlpub.ru/index.php?title=NLTK&amp;oldid=3078" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="https://nlpub.ru/index.php?title=NLTK&amp;action=info" title="Подробнее об этой странице"><span>Сведения о&nbsp;странице</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+</nav>
+
+			</div>
+		</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Содержание
+		<button class="vector-toc-uncollapse-button">переместить в боковую панель</button>
+		<button class="vector-toc-collapse-button">скрыть</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="https://nlpub.ru/NLTK#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Начало</div>
+			</a>
+		</li>
+		<li id="toc-Установка" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Установка</div>
+			</a>
+			
+			<ul id="toc-Установка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Использование</div>
+			</a>
+			
+				<button aria-controls="toc-Использование-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Показать/Скрыть подраздел Использование
+				</button>
+			
+			<ul id="toc-Использование-sublist" class="sidebar-toc-list">
+				<li id="toc-Загрузка_данных" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Загрузка данных</div>
+			</a>
+			
+			<ul id="toc-Загрузка_данных-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Деление_текста_на_предложения" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%94%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Деление текста на предложения</div>
+			</a>
+			
+			<ul id="toc-Деление_текста_на_предложения-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Токенизация" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%A2%D0%BE%D0%BA%D0%B5%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Токенизация</div>
+			</a>
+			
+			<ul id="toc-Токенизация-sublist" class="sidebar-toc-list">
+				<li id="toc-PunktSentenceTokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#PunktSentenceTokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>PunktSentenceTokenizer</div>
+			</a>
+			
+			<ul id="toc-PunktSentenceTokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-TreebankWordTokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#TreebankWordTokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>TreebankWordTokenizer</div>
+			</a>
+			
+			<ul id="toc-TreebankWordTokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-TweetTokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#TweetTokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.3</span>TweetTokenizer</div>
+			</a>
+			
+			<ul id="toc-TweetTokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MWETokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#MWETokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.4</span>MWETokenizer</div>
+			</a>
+			
+			<ul id="toc-MWETokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-TextTilingTokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#TextTilingTokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.5</span>TextTilingTokenizer</div>
+			</a>
+			
+			<ul id="toc-TextTilingTokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-StanfordTokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#StanfordTokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.6</span>StanfordTokenizer</div>
+			</a>
+			
+			<ul id="toc-StanfordTokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-WordPunctTokenizer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#WordPunctTokenizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.7</span>WordPunctTokenizer</div>
+			</a>
+			
+			<ul id="toc-WordPunctTokenizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Прочие_классы" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D0%B5_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.8</span>Прочие классы</div>
+			</a>
+			
+			<ul id="toc-Прочие_классы-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-NLTK_и_русский_язык" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#NLTK_%D0%B8_%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>NLTK и русский язык</div>
+			</a>
+			
+			<ul id="toc-NLTK_и_русский_язык-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ссылки" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Ссылки</div>
+			</a>
+			
+			<ul id="toc-Ссылки-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-См._также" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%A1%D0%BC._%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>См. также</div>
+			</a>
+			
+			<ul id="toc-См._также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Примечания" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="https://nlpub.ru/NLTK#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Примечания</div>
+			</a>
+			
+			<ul id="toc-Примечания-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<header class="mw-body-header">
+				
+				
+					<label id="vector-toc-collapsed-button" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-listBullet mw-checkbox-hack-button" for="vector-toc-collapsed-checkbox" role="button" aria-controls="toc-toggle-list" data-event-name="vector.toc-toggle-list" tabindex="0" title="Содержание">
+						Скрыть/показать содержание
+					</label>
+				    <h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">NLTK</span></h1>
+				</header>
+				<nav class="vector-article-toolbar" aria-label="Инструменты" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://nlpub.ru/NLTK" title="Просмотр основной страницы [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="https://nlpub.ru/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:NLTK&amp;action=edit&amp;redlink=1" rel="discussion" title="Обсуждение основной страницы (страница не существует) [t]" accesskey="t"><span>Обсуждение</span></a></li></ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Изменить вариант языка">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="https://nlpub.ru/NLTK"><span>Читать</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="https://nlpub.ru/index.php?title=NLTK&amp;action=edit" title="Эта страница защищена от изменений.
+Вы можете посмотреть её исходный текст. [e]" accesskey="e"><span>Просмотр кода</span></a></li><li id="ca-history" class="mw-list-item"><a href="https://nlpub.ru/index.php?title=NLTK&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li></ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="Больше возможностей">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="https://nlpub.ru/NLTK"><span>Читать</span></a></li><li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="https://nlpub.ru/index.php?title=NLTK&amp;action=edit"><span>Просмотр кода</span></a></li><li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="https://nlpub.ru/index.php?title=NLTK&amp;action=history"><span>История</span></a></li></ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container="">
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">Материал из NLPub</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr"><div class="mw-parser-output"><table style="border: thin solid rgb(153, 187, 153); background-color: rgb(233, 255, 233); width: 88%; margin: 1em auto; padding: 0.4em; vertical-align: middle; font-size: 90%; --darkreader-inline-border-top:#484e51; --darkreader-inline-border-right:#484e51; --darkreader-inline-border-bottom:#484e51; --darkreader-inline-border-left:#484e51; --darkreader-inline-bgcolor:#104000;" cellpadding="0" cellspacing="0ex" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-bgcolor="">
+
+<tbody><tr>
+<td width="45px" valign="top" align="center"><img alt="Well.svg" src="./NLTK — NLPub_files/45px-Well.svg.png" decoding="async" width="45" height="39" srcset="/images/thumb/7/74/Well.svg/68px-Well.svg.png 1.5x, /images/thumb/7/74/Well.svg/90px-Well.svg.png 2x">
+</td>
+<td style="background-color: rgb(233, 255, 233); padding-left: 3ex; padding-right: 3ex; --darkreader-inline-bgcolor:#104000;" data-darkreader-inline-bgcolor="">Данная статья была создана в рамках учебного задания.
+<dl><dd><b>Студент:</b> <a href="https://nlpub.ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Alexey_Zakaldaev&amp;action=edit&amp;redlink=1" class="new" title="Участник:Alexey Zakaldaev (страница не существует)">Участник:Alexey Zakaldaev</a></dd>
+<dd><b>Преподаватель:</b> <a href="https://nlpub.ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Anton.m.alexeyev" title="Участник:Anton.m.alexeyev">Антон Алексеев</a></dd>
+<dd><b>Срок:</b> 1 декабря 2021</dd></dl>
+<p>В настоящее время задание завершено и проверено. Данная страница может свободно правиться другими участниками NLPub.
+</p>
+</td></tr></tbody></table>
+<p><br>
+<b>nltk</b> (Natural Language ToolKit) — пакет библиотек и программ для символьной и статистической обработки естественного языка, написанных на языке программирования Python. Сопровождается обширной документацией, включая книгу с объяснением основных концепций, стоящих за теми задачами обработки естественного языка, которые можно выполнять с помощью NLTK.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Установка">Установка</span></h2>
+<p><b> pip </b>
+</p><p><code>pip install nltk</code>
+</p><p><b> conda </b>
+</p><p><code>conda install -c anaconda nltk </code>
+</p>
+<h2><span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Использование">Использование</span></h2>
+<h3><span id=".D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85"></span><span class="mw-headline" id="Загрузка_данных">Загрузка данных</span></h3>
+<p>Скачиваем данные, необходимые для работы библиотеки:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'popular'</span><span class="p">)</span>
+</pre></div>
+<p>Аргумент <code>popular</code> скачивает часто используемые компоненты (данные, словари, заранее обученные модели). Вместо него можно написать аргумент <code>all</code>, который скачает все доступные пакеты, или имя конкретного пакета.<br>
+Чтобы исследовать доступное, можно воспользоваться особым интерфейсом:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">nltk</span>                                                                                                         
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>                                                                                             
+<span class="n">NLTK</span> <span class="n">Downloader</span>                                                                                                         <span class="o">---------------------------------------------------------------------------</span>                                                 
+<span class="n">d</span><span class="p">)</span> <span class="n">Download</span>   <span class="n">l</span><span class="p">)</span> <span class="n">List</span>    <span class="n">u</span><span class="p">)</span> <span class="n">Update</span>   <span class="n">c</span><span class="p">)</span> <span class="n">Config</span>   <span class="n">h</span><span class="p">)</span> <span class="n">Help</span>   <span class="n">q</span><span class="p">)</span> <span class="n">Quit</span>                                                  <span class="o">---------------------------------------------------------------------------</span>
+<span class="n">Downloader</span><span class="o">&gt;</span> <span class="n">l</span>                                                                                                                                                                                                                                   <span class="n">Packages</span><span class="p">:</span>                                                                                                                 
+<span class="p">[</span> <span class="p">]</span> <span class="n">abc</span><span class="o">.................</span> <span class="n">Australian</span> <span class="n">Broadcasting</span> <span class="n">Commission</span> <span class="mi">2006</span>                                                        
+<span class="p">[</span> <span class="p">]</span> <span class="n">alpino</span><span class="o">..............</span> <span class="n">Alpino</span> <span class="n">Dutch</span> <span class="n">Treebank</span>                                                                          
+<span class="p">[</span> <span class="p">]</span> <span class="n">averaged_perceptron_tagger</span> <span class="n">Averaged</span> <span class="n">Perceptron</span> <span class="n">Tagger</span>                                                               
+<span class="p">[</span> <span class="p">]</span> <span class="n">averaged_perceptron_tagger_ru</span> <span class="n">Averaged</span> <span class="n">Perceptron</span> <span class="n">Tagger</span> <span class="p">(</span><span class="n">Russian</span><span class="p">)</span>                                                  
+<span class="p">[</span> <span class="p">]</span> <span class="n">basque_grammars</span><span class="o">.....</span> <span class="n">Grammars</span> <span class="k">for</span> <span class="n">Basque</span>           
+<span class="o">...</span>
+</pre></div>
+<h3><span id=".D0.94.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.B0_.D0.BD.D0.B0_.D0.BF.D1.80.D0.B5.D0.B4.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Деление_текста_на_предложения">Деление текста на предложения</span></h3>
+<p>Для разбиения на предложения используем <code>nltk.sent_tokenize</code>.<br>
+У этой функции есть параметр <code>language</code>, по-умолчанию 'english'. Замена языка на 'russian' иногда может помочь корректно разделить предложения:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">"Ай да А.С. Пушкин! Ай да хитрец!"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Ай да А.С.'</span><span class="p">,</span> <span class="s1">'Пушкин!'</span><span class="p">,</span> <span class="s1">'Ай да хитрец!'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"russian"</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Ай да А.С. Пушкин!'</span><span class="p">,</span> <span class="s1">'Ай да хитрец!'</span><span class="p">]</span>
+</pre></div>
+<p>Однако использование этого значения параметра иногда может привести к неожиданным ошибкам:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">"Ты плохой муж. Я бы этим особо не хвастался."</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Ты плохой муж.'</span><span class="p">,</span> <span class="s1">'Я бы этим особо не хвастался.'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"russian"</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Ты плохой муж. Я бы этим особо не хвастался.'</span><span class="p">]</span>
+</pre></div>
+<h3><span id=".D0.A2.D0.BE.D0.BA.D0.B5.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Токенизация">Токенизация</span></h3>
+<p>Для токенизации используем <code>nltk.word_tokenize</code>.<br>
+У этой функции также есть параметр <code>language</code>, по-умолчанию 'english' и который тоже можно заменить на 'russian'.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">"Всё самое лучшее случается неожиданно."</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Всё'</span><span class="p">,</span> <span class="s1">'самое'</span><span class="p">,</span> <span class="s1">'лучшее'</span><span class="p">,</span> <span class="s1">'случается'</span><span class="p">,</span> <span class="s1">'неожиданно'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">]</span>
+</pre></div>
+<p>Примеров различий между методами для разных языков найти не удалось, поэтому, возможно, пока всё работает с языком по-умолчанию, то лучше использовать так.<br>
+Простое разбиение текста на токены:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">punctuation</span>
+
+<span class="n">russian_stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">"russian"</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"Ты не забывай, что у меня в голове опилки. Длинные слова меня только огорчают!"</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">russian_stopwords</span> <span class="ow">and</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">punctuation</span><span class="p">]</span>
+</pre></div>
+<p>В этом примере текст переводится в нижний регистр с помощью стандартной функции <code>lower</code>. 
+После разбиения текста на токены, из их списка удаляется пунктуация по словарю <code>string.punctuation</code> 
+и удаляются стоп-слова в русском языке по словарю, который получаем из <code>nltk.corpus.stopwords</code><sup id="cite_ref-1" class="reference"><a href="https://nlpub.ru/NLTK#cite_note-1">[1]</a></sup>.
+</p><p>В модуле <code>nltk.tokenize</code> есть множество классов токенизаторов и функции <code>nltk.sent_tokenize</code> и <code>nltk.word_tokenize</code> на самом деле являются обертками, которые делают вызовы к этим классам. 
+</p>
+<h4><span class="mw-headline" id="PunktSentenceTokenizer">PunktSentenceTokenizer</span></h4>
+<p>Класс, разбивающий текст на предложения, к которому под капотом обращается функция <code>nltk.sent_tokenize</code>. Использует алгоритм без учителя для построения модели сокращённых слов, словосочетаний и слов, начинающих предложения, а затем использует эту модель для поиска границ предложений.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">PunktSentenceTokenizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">PunktSentenceTokenizer</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'В этом предложении пять слов. А вот еще пять слов. Предложения из пяти слов хорошие.'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'В этом предложении пять слов.'</span><span class="p">,</span> <span class="s1">'А вот еще пять слов.'</span><span class="p">,</span> <span class="s1">'Предложения из пяти слов хорошие.'</span><span class="p">]</span>
+</pre></div>
+<h4><span class="mw-headline" id="TreebankWordTokenizer">TreebankWordTokenizer</span></h4>
+<p>Класс используется для разделения предложений на слова и вызывается под капотом в функции <code>nltk.word_tokenize</code>.<br>
+Он предполагает, что текст уже был разделён на предложения и выполняет следующие шаги:
+</p>
+<ul><li>Разделяет стандартные сокращения, например don't -&gt; do n't and they'll -&gt; they 'll</li>
+<li>Рассматривает большинство знаков препинания как отдельные токены</li>
+<li>Отделяет запятые и одинарные кавычки, если за ними следует пробел</li>
+<li>Отделяет точки в конце предложений</li></ul>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">TreebankWordTokenizer</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">'''Good muffins cost $3.88</span><span class="se">\n</span><span class="s1">in New York.  Please buy me</span><span class="se">\n</span><span class="s1">two of them.</span><span class="se">\n</span><span class="s1">Thanks.'''</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">TreebankWordTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Good'</span><span class="p">,</span> <span class="s1">'muffins'</span><span class="p">,</span> <span class="s1">'cost'</span><span class="p">,</span> <span class="s1">'$'</span><span class="p">,</span> <span class="s1">'3.88'</span><span class="p">,</span> <span class="s1">'in'</span><span class="p">,</span> <span class="s1">'New'</span><span class="p">,</span> <span class="s1">'York.'</span><span class="p">,</span> <span class="s1">'Please'</span><span class="p">,</span> <span class="s1">'buy'</span><span class="p">,</span> <span class="s1">'me'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'of'</span><span class="p">,</span> <span class="s1">'them.'</span><span class="p">,</span> <span class="s1">'Thanks'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"They'll save and invest more."</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">TreebankWordTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'They'</span><span class="p">,</span> <span class="s2">"'ll"</span><span class="p">,</span> <span class="s1">'save'</span><span class="p">,</span> <span class="s1">'and'</span><span class="p">,</span> <span class="s1">'invest'</span><span class="p">,</span> <span class="s1">'more'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"hi, my name can't hello,"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">TreebankWordTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'hi'</span><span class="p">,</span> <span class="s1">','</span><span class="p">,</span> <span class="s1">'my'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'ca'</span><span class="p">,</span> <span class="s2">"n't"</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">','</span><span class="p">]</span>
+</pre></div>
+<h4><span class="mw-headline" id="TweetTokenizer">TweetTokenizer</span></h4>
+<p>Токенизатор для твитов (не удаляет хэштеги и знаки пунктуации).
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">TweetTokenizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tknzr</span> <span class="o">=</span> <span class="n">TweetTokenizer</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s0</span> <span class="o">=</span> <span class="s2">"This is a cooool #dummysmiley:&nbsp;:-)&nbsp;:-P &lt;3 and some arrows &lt; &gt; -&gt; &lt;--"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tknzr</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'This'</span><span class="p">,</span> <span class="s1">'is'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'cooool'</span><span class="p">,</span> <span class="s1">'#dummysmiley'</span><span class="p">,</span> <span class="s1">':'</span><span class="p">,</span> <span class="s1">':-)'</span><span class="p">,</span> <span class="s1">':-P'</span><span class="p">,</span> <span class="s1">'&lt;3'</span><span class="p">,</span> <span class="s1">'and'</span><span class="p">,</span> <span class="s1">'some'</span><span class="p">,</span> <span class="s1">'arrows'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">,</span> <span class="s1">'&gt;'</span><span class="p">,</span> <span class="s1">'-&gt;'</span><span class="p">,</span> <span class="s1">'&lt;--'</span><span class="p">]</span>
+</pre></div>
+<h4><span class="mw-headline" id="MWETokenizer">MWETokenizer</span></h4>
+<p>Принимает текст, который уже был разбит на токены и объединяет выражения из нескольких слов в один токен, используя словарь.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">MWETokenizer</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">MWETokenizer</span><span class="p">([(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'little'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'little'</span><span class="p">,</span> <span class="s1">'bit'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'lot'</span><span class="p">)])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">add_mwe</span><span class="p">((</span><span class="s1">'in'</span><span class="p">,</span> <span class="s1">'spite'</span><span class="p">,</span> <span class="s1">'of'</span><span class="p">))</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s1">'Testing testing testing one two three'</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="p">[</span><span class="s1">'Testing'</span><span class="p">,</span> <span class="s1">'testing'</span><span class="p">,</span> <span class="s1">'testing'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s1">'This is a test in spite'</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="p">[</span><span class="s1">'This'</span><span class="p">,</span> <span class="s1">'is'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">,</span> <span class="s1">'in'</span><span class="p">,</span> <span class="s1">'spite'</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s1">'In a little or a little bit or a lot in spite of'</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="p">[</span><span class="s1">'In'</span><span class="p">,</span> <span class="s1">'a_little'</span><span class="p">,</span> <span class="s1">'or'</span><span class="p">,</span> <span class="s1">'a_little_bit'</span><span class="p">,</span> <span class="s1">'or'</span><span class="p">,</span> <span class="s1">'a_lot'</span><span class="p">,</span> <span class="s1">'in_spite_of'</span><span class="p">]</span>
+</pre></div>
+<h4><span class="mw-headline" id="TextTilingTokenizer">TextTilingTokenizer</span></h4>
+<p>Используется для разделения текста на абзацы.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'gutenberg'</span><span class="p">)</span>
+
+<span class="n">alice</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s1">'carroll-alice.txt'</span><span class="p">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">TextTilingTokenizer</span><span class="p">()</span>
+<span class="n">tiles</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">alice</span><span class="p">[</span><span class="mi">140309</span> <span class="p">:</span> <span class="p">])</span>
+</pre></div>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="StanfordTokenizer">StanfordTokenizer</span></h4>
+<p>Интерфейс для Stanford Tokenizer (работает только с английским языком).
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">StanfordTokenizer</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"Good muffins cost $3.88</span><span class="se">\n</span><span class="s2">in New York.  Please buy me</span><span class="se">\n</span><span class="s2">two of them.</span><span class="se">\n</span><span class="s2">Thanks."</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">StanfordTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Good'</span><span class="p">,</span> <span class="s1">'muffins'</span><span class="p">,</span> <span class="s1">'cost'</span><span class="p">,</span> <span class="s1">'$'</span><span class="p">,</span> <span class="s1">'3.88'</span><span class="p">,</span> <span class="s1">'in'</span><span class="p">,</span> <span class="s1">'New'</span><span class="p">,</span> <span class="s1">'York'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'Please'</span><span class="p">,</span> <span class="s1">'buy'</span><span class="p">,</span> <span class="s1">'me'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'of'</span><span class="p">,</span> <span class="s1">'them'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'Thanks'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"The colour of the wall is blue."</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">StanfordTokenizer</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">"americanize"</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'The'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="s1">'of'</span><span class="p">,</span> <span class="s1">'the'</span><span class="p">,</span> <span class="s1">'wall'</span><span class="p">,</span> <span class="s1">'is'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">]</span>
+</pre></div>
+<h4><span class="mw-headline" id="WordPunctTokenizer">WordPunctTokenizer</span></h4>
+<p>Разделяет текст на последовательности алфавитных и неалфавитных символов с помощью регулярного выражения <code>\w+|[^\w\s]+</code>.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">WordPunctTokenizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"Good muffins cost $3.88</span><span class="se">\n</span><span class="s2">in New York.  Please buy me</span><span class="se">\n</span><span class="s2">two of them.</span><span class="se">\n\n</span><span class="s2">Thanks."</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">WordPunctTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">'Good'</span><span class="p">,</span> <span class="s1">'muffins'</span><span class="p">,</span> <span class="s1">'cost'</span><span class="p">,</span> <span class="s1">'$'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'88'</span><span class="p">,</span> <span class="s1">'in'</span><span class="p">,</span> <span class="s1">'New'</span><span class="p">,</span> <span class="s1">'York'</span><span class="p">,</span>
+<span class="s1">'.'</span><span class="p">,</span> <span class="s1">'Please'</span><span class="p">,</span> <span class="s1">'buy'</span><span class="p">,</span> <span class="s1">'me'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'of'</span><span class="p">,</span> <span class="s1">'them'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'Thanks'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">]</span>
+</pre></div>
+<h4><span id=".D0.9F.D1.80.D0.BE.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D1.8B"></span><span class="mw-headline" id="Прочие_классы">Прочие классы</span></h4>
+<ul><li><b><code>nltk.tokenize.RegexpTokenizer</code></b> — разделяет текст с помощью регулярного выражения, которое необходимо самостоятельно задать.</li>
+<li><b><code>nltk.tokenize.SExprTokenizer</code></b> — разделяет текст, состоящий из <a rel="nofollow" class="external text" href="https://ru.wikipedia.org/wiki/S-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5">S-выражений</a>.</li>
+<li><b><code>nltk.tokenize.SpaceTokenizer</code></b> — разделяет токены по пробелам аналогично <code>s.split(' ')</code>.</li>
+<li><b><code>nltk.tokenize.TabTokenizer</code></b> — разделяет токены по символам табуляции аналогично <code>s.split('\t')</code>.</li>
+<li><b><code>nltk.tokenize.LineTokenizer</code></b> — разделяет токены по символам переноса строки аналогично <code>s.split('\n')</code>.</li>
+<li><b><code>nltk.tokenize.WhitespaceTokenizer</code></b> — разделяет токены по символам пробела, табуляции или переноса строки аналогично <code>s.split()</code>.</li>
+<li><b><code>nltk.tokenize.BlanklineTokenizer</code></b> — разделяет токены используя в качестве разделителя любые последовательности пробелов и табуляций.</li></ul>
+<h3><span id="NLTK_.D0.B8_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.B8.D0.B9_.D1.8F.D0.B7.D1.8B.D0.BA"></span><span class="mw-headline" id="NLTK_и_русский_язык">NLTK и русский язык</span></h3>
+<table style="border: thin solid rgb(187, 153, 153); background-color: rgb(255, 233, 233); width: 88%; margin: 1em auto; padding: 0.4em; vertical-align: middle; font-size: 90%; --darkreader-inline-border-top:#484e51; --darkreader-inline-border-right:#484e51; --darkreader-inline-border-bottom:#484e51; --darkreader-inline-border-left:#484e51; --darkreader-inline-bgcolor:#400000;" cellpadding="0" cellspacing="0ex" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-bgcolor="">
+
+<tbody><tr>
+<td width="45px" valign="top" align="center"><img alt="Stop.svg" src="./NLTK — NLPub_files/45px-Stop.svg.png" decoding="async" width="45" height="41" srcset="/images/thumb/6/67/Stop.svg/68px-Stop.svg.png 1.5x, /images/thumb/6/67/Stop.svg/90px-Stop.svg.png 2x">
+</td>
+<td style="background-color: rgb(255, 233, 233); padding-left: 3ex; padding-right: 3ex; --darkreader-inline-bgcolor:#400000;" data-darkreader-inline-bgcolor="">Данная статья является <a href="https://nlpub.ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9D%D0%B5%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F&amp;action=edit&amp;redlink=1" class="new" title="Категория:Непроверенные учебные задания (страница не существует)">непроверенным учебным заданием</a>.
+<dl><dd><b>Студент:</b> <a href="https://nlpub.ru/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D0%B8%D0%BA%D0%BE%D0%B2&amp;action=edit&amp;redlink=1" class="new" title="Участник:Николай Березиков (страница не существует)">Участник:Николай Березиков</a></dd>
+<dd><b>Преподаватель:</b> <a href="https://nlpub.ru/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Anton.m.alexeyev" title="Участник:Anton.m.alexeyev">Антон Алексеев</a></dd>
+<dd><b>Срок:</b> 20 мая 2022</dd></dl>
+<p>До указанного срока статья не должна редактироваться другими участниками NLPub. По его окончании любой участник вправе исправить данную статью по своему усмотрению и удалить данное предупреждение, выводимое с помощью шаблона {{<a href="https://nlpub.ru/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5" title="Шаблон:Задание">Задание</a>}}.
+</p><p>См. также <i><a href="http://www.machinelearning.ru/wiki/index.php?title=MachineLearning:%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81" class="extiw" title="mlru:MachineLearning:Учебный процесс">методические указания</a></i> наших коллег с <b>MachineLearning.ru</b> по использованию Вики-ресурсов в учебном процессе.
+</p>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"></span><span class="mw-headline" id="Ссылки">Ссылки</span></h2>
+<p><a rel="nofollow" class="external free" href="https://www.nltk.org/">https://www.nltk.org/</a> — официальный сайт и документация
+</p>
+<h2><span id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="См._также">См. также</span></h2>
+<ul><li><a href="https://nlpub.ru/SpaCy" title="SpaCy">spaCy</a></li></ul>
+<h2><span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Примечания">Примечания</span></h2>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="https://nlpub.ru/NLTK#cite_ref-1">↑</a></span> <span class="reference-text">В реальности
+токенизация может использовать капитализацию, а проверку по списку стоп-слов стоит делать после приведения токенов
+к словарной форме.</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Cached time: 20221206002815
+Cache expiry: 1209600
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.047 seconds
+Real time usage: 0.056 seconds
+Preprocessor visited node count: 230/1000000
+Post‐expand include size: 7723/2097152 bytes
+Template argument size: 3846/2097152 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 26229/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   19.481      1 -total
+ 38.78%    7.555      1 Шаблон:Задание
+ 36.80%    7.169      1 Шаблон:ЗаданиеВыполнено
+ 26.73%    5.207      2 Шаблон:Mbox
+ 26.17%    5.098      1 Шаблон:Stop
+ 22.00%    4.286      1 Шаблон:Well
+ 15.32%    2.985      1 Шаблон:Tlp
+-->
+
+<!-- Saved in parser cache with key mediawiki:pcache:idhash:470-0!canonical and timestamp 20221206002815 and revision id 3078.
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://nlpub.ru/index.php?title=NLTK&amp;oldid=3078">https://nlpub.ru/index.php?title=NLTK&amp;oldid=3078</a></div></div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://nlpub.ru/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="https://nlpub.ru/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9D%D0%B5%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F&amp;action=edit&amp;redlink=1" class="new" title="Категория:Непроверенные учебные задания (страница не существует)">Непроверенные учебные задания</a></li><li><a href="https://nlpub.ru/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B" title="Категория:Инструменты">Инструменты</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 16 мая 2022 в 13:09.</li>
+	<li id="footer-info-copyright">Содержание доступно по лицензии <a href="https://nlpub.ru/NLPub:%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F" title="NLPub:Лицензия">Creative Commons Attribution ShareAlike</a> (если не указано иное).</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://nlpub.ru/NLPub:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="https://nlpub.ru/NLPub:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">О NLPub</a></li>
+	<li id="footer-places-disclaimer"><a href="https://nlpub.ru/NLPub:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="./NLTK — NLPub_files/cc-by-sa.png" alt="Creative Commons Attribution ShareAlike" width="88" height="31" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="./NLTK — NLPub_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(17329045, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/17329045" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.047","walltime":"0.056","ppvisitednodes":{"value":230,"limit":1000000},"postexpandincludesize":{"value":7723,"limit":2097152},"templateargumentsize":{"value":3846,"limit":2097152},"expansiondepth":{"value":10,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":26229,"limit":5000000},"timingprofile":["100.00%   19.481      1 -total"," 38.78%    7.555      1 Шаблон:Задание"," 36.80%    7.169      1 Шаблон:ЗаданиеВыполнено"," 26.73%    5.207      2 Шаблон:Mbox"," 26.17%    5.098      1 Шаблон:Stop"," 22.00%    4.286      1 Шаблон:Well"," 15.32%    2.985      1 Шаблон:Tlp"]},"cachereport":{"timestamp":"20221206002815","ttl":1209600,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":118});});</script>
+
+
+<div id="popupMenu" style="display: none;"></div><div><iframe src="./NLTK — NLPub_files/audio.html" style="visibility:hidden"></iframe></div></body><!-- Cached 20221206002815 --></html>
